@@ -1,3 +1,5 @@
+CREATE DATABASE crowdfunding_db
+
 CREATE TABLE contacts (
     contact_id int NOT NULL,
     first_name varchar(255)  NOT NULL,
@@ -26,14 +28,14 @@ CREATE TABLE campaign (
     contact_id int NOT NULL,
     company_name varchar(255)  NOT NULL,
     description varchar(255)  NOT NULL,
-    goal varchar NOT NULL,
-    pledged varchar  NOT NULL,
+    goal float NOT NULL,
+    pledged float  NOT NULL,
     outcome varchar(255)  NOT NULL,
     backers_count int   NOT NULL,
     country varchar(255)  NOT NULL,
     currency varchar(255)  NOT NULL,
-    launched_date date   NOT NULL,
-    end_date date   NOT NULL,
+    launched_date varchar(255)   NOT NULL,
+    end_date varchar(255)   NOT NULL,
     category_id varchar(255)  NOT NULL,
     subcategory_id varchar(255)  NOT NULL,
 	primary key (cf_id),
@@ -42,8 +44,7 @@ CREATE TABLE campaign (
 	foreign key (subcategory_id) references subcategory(subcategory_id)
 );
 
-select * from contacts
-select * from category
-select * from subcategory
-select * from campaign
- 
+select * from contacts;
+select * from category;
+select * from subcategory;
+select * from campaign;
